@@ -4,8 +4,8 @@ import { RevealOnScroll } from './RevealOnScroll';
 import { VenueMapModal } from './VenueMapModal';
 import { WeddingConfig } from '../types';
 import { Map, Plane, Train, Home, Clock } from 'lucide-react';
-import himalayanPanoramicImg from '../assets/images/himalayan_mountain_river_panoramic.png';
 import { FlowerSketchAccent } from './FlowerSketchAccent';
+import { AnimatedMountainScene } from './AnimatedMountainScene';
 
 interface TravelStayProps {
   config: WeddingConfig;
@@ -15,36 +15,11 @@ export const TravelStay: React.FC<TravelStayProps> = ({ config }) => {
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
 
   return (
-    <section id="travel" className="pt-10 sm:pt-14 pb-12 sm:pb-16 px-4 max-w-4xl mx-auto w-full relative">
-      {/* ── TOP PANORAMIC HIMALAYAN MOUNTAINS & RIVER ARTWORK ── */}
-      <RevealOnScroll>
-        <div className="relative w-full max-w-md sm:max-w-lg mx-auto flex items-center justify-center select-none pointer-events-none mb-3">
-          <img
-            src={himalayanPanoramicImg}
-            alt="Watercolor Himalayan Mountains and Sacred Ganga River"
-            className="w-full h-auto object-contain pointer-events-none select-none drop-shadow-xs"
-            style={{
-              maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
-            }}
-          />
-        </div>
-      </RevealOnScroll>
-
-      {/* ── SECTION HEADING: CLEAN, HIGH-CONTRAST & EASY TO READ ── */}
-      <RevealOnScroll delay={100}>
-        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-12 relative z-10">
-          <span className="text-[11px] sm:text-xs font-sans tracking-[0.26em] text-[#8A5A00] uppercase font-bold block mb-1">
-            {config.travel.eyebrow}
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-[#140F0A] font-bold leading-tight">
-            {config.travel.heading}
-          </h2>
-          <p className="font-cursive text-xl sm:text-2xl text-[#7A4B00] mt-1.5 font-normal tracking-wide">
-            Reaching the peaceful mountain valley of Rishikesh
-          </p>
-        </div>
-      </RevealOnScroll>
+    <section id="travel" className="pt-8 sm:pt-12 pb-12 sm:pb-16 px-3 sm:px-4 max-w-4xl mx-auto w-full relative">
+      {/* ── ANIMATED TRAVEL & MOUNTAIN STAY HEADING WITH HEART-LOOP FLIGHT & LIVING MOUNTAINS ── */}
+      <div className="mb-4 sm:mb-6">
+        <AnimatedMountainScene eyebrow={config.travel.eyebrow || 'YOUR JOURNEY TO RISHIKESH'} />
+      </div>
 
       {/* ── TRANSIT & STAY: NO CARDS, CLEAN CONCISE 1-2 LINES DIRECTLY ON THEME BACKGROUND ── */}
       <div className="space-y-8 max-w-lg mx-auto w-full relative z-10">
